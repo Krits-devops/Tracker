@@ -35,7 +35,7 @@ socket.on('receive-location', (data) => {
     }
 });
 
-socket.on('user-disconnect', (id) => {
+socket.on("user-disconnect", (id) => {
     if(markers[id]){
         map.removeLayer(markers[id]);
         delete markers[id];

@@ -12,10 +12,10 @@ const io = socketio(server);
 io.on("connection", (socket) => {
     socket.on("send-location", (data)=>{
         io.emit("receive-location",{id: socket.id, ...data});
-    }) 
+    });
     socket.on("disconnect", () =>{
-        io.emit('user-disconnect', {id: socket.id});
-    })
+        io.emit('user-disconnect',socket.id);
+    });
 })
 
 
